@@ -1,6 +1,6 @@
 # Real-Time Dance Step Recognition from Smartphone Inertial Signals (MATLAB/Simulink)
 
-Group project (**Group 3**, 5 students) for the **Automation** course, MSc in Biomedical Engineering, Università Campus Bio-Medico di Roma (report dated 17 December 2025).
+Group project (**Group 3**, 5 students) for the **Automation and Workplace Safety** course (*Automazione e Sicurezza di Ambienti di Lavoro*), A.Y. 2025/2026, MSc in Biomedical Engineering, Università Campus Bio-Medico di Roma (report dated 17 December 2025).
 
 The system recognises **two ballet steps**, **Grand Battement** and **Rond de Jambe par Terre** (labelled `passo1` and `passo2` in the code), from the **accelerometer and gyroscope of a smartphone strapped to the lower calf**, and also detects when the person is standing still (`fermo`). The phone streams its sensors to **Simulink**. The full pipeline (filtering → event windowing → feature extraction → PCA → classifier) was first developed offline in MATLAB and then rebuilt to run **online**, sample by sample. The model shows the recognised movement live as an image.
 
@@ -85,7 +85,7 @@ Taken from `docs/report.pdf`. Test set = 20% hold-out; "online" = live classific
 ## How to run
 - **Requirements:** MATLAB/Simulink with Signal Processing, Statistics and Machine Learning, and *Simulink Support Package for Android Devices* for the live phone sensors.
 - **Offline:** run the scripts in folders 2 → 5 in order. Each folder already contains the `.mat` files it needs.
-- **Report:** `docs/report.pdf` (in Italian) describes the methods and results in full.
+- **Report and presentation:** `docs/report.pdf` and `docs/presentation.pdf` (in Italian) describe the methods, literature review and results in full.
 - **Online:** connect the phone with `Script_wifi.m` (set your own ADB path and the phone's IP address), then open and run `6_online/Circuito_Online_Definitivo.slx`.
 
 ---
