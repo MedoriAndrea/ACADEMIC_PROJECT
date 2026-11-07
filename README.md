@@ -11,5 +11,6 @@ Many projects were carried out as group work with fellow students; each folder c
 | [Teleoperated Mobile Robot – Odometry & EKF](Mechatronics_Mobile_Robot/) | Mechatronics (group) | Embedded C (PIC), I²C encoders, Bluetooth, MATLAB GUI, odometry, Extended Kalman Filter | Nov 2024–Jun 2025 |
 | [4-DOF LEGO EV3 Manipulator – Kinematics & Redundancy](Robotics_EV3_Manipulator/) | Industrial and Medical Robotics | DH, forward/inverse kinematics (CLIK), trajectory planning, redundancy resolution, dynamic model, LEGO EV3 (Python) | Mar–Jun 2025 |
 | [Real-Time Movement Recognition from Smartphone IMU](Automation_HAR_Dance_Steps_Simulink/) | Automation (group) | Simulink + Android sensors, band-pass filtering, event windowing, 162 features, PCA, SVM / boosted trees, real-time classification | Dec 2025–Feb 2026 |
+| [AddiKid Hand – Pediatric Prosthetic Hand](Biodesign_Pediatric_Prosthetic_Hand/) | Biodesign (group) | Underactuated tendon transmission, actuator sizing, fingertip force model, sEMG/FMG/IMU sensing, custom PCB (ATmega328P, BLE), CAD | Sep 2025–Jan 2026 |
 
 *More projects will be added.*
