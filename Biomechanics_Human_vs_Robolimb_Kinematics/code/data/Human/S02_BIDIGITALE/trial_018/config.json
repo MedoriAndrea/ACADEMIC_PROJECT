@@ -1,0 +1,11 @@
+{
+    "mode": "Human",
+    "subject": "S02_BIDIGITALE",
+    "trial": 18,
+    "created_at": "2026-05-28T13:34:12",
+    "tracking_mode": "HUMAN",
+    "udp_ip": "192.168.14.24",
+    "udp_port": 5006,
+    "object_detection_enabled": false,
+    "notes": "Sessione generata da gui_demo.ui; conversione pixel-cm non inclusa in questa versione."
+}

@@ -1,0 +1,11 @@
+{
+    "mode": "Robot",
+    "subject": "S04",
+    "trial": 13,
+    "created_at": "2026-05-26T11:56:57",
+    "tracking_mode": "ROBOT",
+    "udp_ip": "192.168.14.24",
+    "udp_port": 5006,
+    "object_detection_enabled": false,
+    "notes": "Sessione generata da gui_demo.ui; conversione pixel-cm non inclusa in questa versione."
+}

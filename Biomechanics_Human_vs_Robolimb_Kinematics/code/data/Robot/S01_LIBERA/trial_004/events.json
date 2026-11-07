@@ -1,0 +1,10 @@
+[
+    {
+        "event": "start_recording",
+        "time_iso": "2026-05-28T12:25:30"
+    },
+    {
+        "event": "stop_recording",
+        "time_iso": "2026-05-28T12:25:42"
+    }
+]
