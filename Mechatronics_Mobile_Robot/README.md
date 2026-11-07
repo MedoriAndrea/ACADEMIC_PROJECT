@@ -5,7 +5,7 @@ Group project (**Group 4**) for the **Mechatronics** course, MSc in Biomedical E
 We designed and programmed a small **differential-drive mobile robot** that is driven from a PC over Bluetooth. Its pose is estimated in real time in two ways:
 
 1. **Odometry:** wheel encoders only, with second-order Runge–Kutta integration.
-2. **Extended Kalman Filter (EKF):** odometry corrected by a distance sensor that measures the distance from a known wall.
+2. **Extended Kalman Filter (EKF):** odometry corrected by a **LiDAR** sensor that measures the distance from a known wall.
 
 ---
 
@@ -16,7 +16,7 @@ We designed and programmed a small **differential-drive mobile robot** that is d
 │  PC – MATLAB             │ ─────────────────────► │  Robot – PIC16F887 @ 20 MHz   │
 │  • GUI teleoperation     │   wheel commands       │  • 2 motors (pulse-width ctrl)│
 │  • Odometry / EKF        │ ◄───────────────────── │  • 2 × AS5600 encoders (I²C)  │
-│  • Real-time pose plot   │   encoders + distance  │  • Distance sensor (ADC)      │
+│  • Real-time pose plot   │   encoders + distance  │  • LiDAR sensor (ADC)         │
 └──────────────────────────┘                        └───────────────────────────────┘
 ```
 
@@ -24,7 +24,7 @@ We designed and programmed a small **differential-drive mobile robot** that is d
 - **Microcontroller:** PIC16F887 (20 MHz clock), programmed in C with the CCS compiler.
 - **Motors:** left and right wheel motors controlled by pulse width. 1500 µs is the neutral (stop) value, and the pulse varies by ±200 µs at the maximum wheel speed (5.23 rad/s).
 - **Encoders:** two AS5600 12-bit magnetic angle sensors (4096 counts per revolution), on two separate I²C buses.
-- **Distance sensor:** analog distance sensor (called `lidar` in the code), read by the 10-bit ADC and converted from voltage to metres with a power-law calibration curve.
+- **LiDAR sensor:** distance sensor with analog output, read by the 10-bit ADC and converted from voltage to metres with a calibration curve.
 - **Communication:** Bluetooth serial module at 9600 baud.
 - **Geometry:** wheel radius r = 0.035 m, wheel distance d = 0.105 m.
 
@@ -42,7 +42,7 @@ The `0x01` byte acts as a header, or acknowledgement, to keep the packets synchr
 
 - **Timer2 interrupt:** sets the control rate. On every tick the motor pulses are generated, and every 3 ticks the sensor data are read and sent over Bluetooth.
 - **Encoders:** each AS5600 angle register (`0x0E`) is read over I²C.
-- **Distance sensor:** read through the ADC on channel AN2.
+- **LiDAR:** read through the ADC on channel AN2.
 - **Commands:** new pulse widths are received over Bluetooth, with the timer interrupt temporarily disabled while they are updated.
 
 ## MATLAB software (`matlab/`)
@@ -51,7 +51,7 @@ The `0x01` byte acts as a header, or acknowledgement, to keep the packets synchr
 |---|---|
 | `GUI_interface_Speed.m` / `.fig` | GUIDE interface for teleoperation. It connects to the robot over Bluetooth and has buttons for forward, backward, left, right, the four diagonals, stop, and speed up/down. Wheel speeds (rad/s) are converted to pulse widths and sent as 5-byte packets. |
 | `odometria_online.m` | Online odometry. Reads the encoders, unwraps the angle increments, computes the wheel speeds, then the linear and angular velocity (v, ω) of the robot, and integrates the pose. The trajectory is plotted live over a map with obstacles and waypoints. |
-| `kalman_online.m` | Online EKF localisation. Same pipeline as odometry, plus the distance measurement, used to correct the pose against a known wall. |
+| `kalman_online.m` | Online EKF localisation. Same pipeline as odometry, plus the LiDAR distance measurement, used to correct the pose against a known wall. |
 | `f_k.m` | Motion model: second-order Runge–Kutta integration of the unicycle kinematics. |
 | `ekf_2605.m` | EKF prediction and update step. |
 
@@ -79,7 +79,7 @@ The `0x01` byte acts as a header, or acknowledgement, to keep the packets synchr
 The `results/` folder contains the MATLAB figures of the estimated trajectories (`mappa_odometria.fig`, `kalman_gruppo_4.fig`) and the saved workspaces. The `media/` folder contains the videos of the two online tests.
 
 ### Limitations
-- The single distance measurement only corrects the **y** coordinate. Errors in **x** and **θ** are not directly observable and still drift, as they do with odometry.
+- The single LiDAR measurement only corrects the **y** coordinate. Errors in **x** and **θ** are not directly observable and still drift, as they do with odometry.
 - The wheel speeds for each GUI command were tuned by hand on the real robot instead of being computed from inverse kinematics. The inverse kinematics formulas are still in the code, commented out.
 - The sampling time Δt is fixed in MATLAB and not measured from the incoming packets.
 
