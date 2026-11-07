@@ -9,5 +9,6 @@ Many projects were carried out as group work with fellow students; each folder c
 |---|---|---|---|
 | [Retinal Disease Analysis on ODIR](Digital_Signal_and_Image_Processing/) | Digital Signal and Image Processing | Image processing, feature extraction (colour, GLCM), statistical tests, CNN, nested cross-validation | Jan–Feb 2025 |
 | [Teleoperated Mobile Robot – Odometry & EKF](Mechatronics_Mobile_Robot/) | Mechatronics (group) | Embedded C (PIC), I²C encoders, Bluetooth, MATLAB GUI, odometry, Extended Kalman Filter | Nov 2024–Jun 2025 |
+| [4-DOF LEGO EV3 Manipulator – Kinematics & Redundancy](Robotics_EV3_Manipulator/) | Industrial and Medical Robotics | DH, forward/inverse kinematics (CLIK), trajectory planning, redundancy resolution, dynamic model, LEGO EV3 (Python) | Mar–Jun 2025 |
 
 *More projects will be added.*
