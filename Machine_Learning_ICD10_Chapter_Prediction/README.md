@@ -94,7 +94,9 @@ The test-set result (76.5%) is close to the nested-CV estimate (77.6%), which co
 ## Repository structure
 ```
 ├── icd10_chapter_prediction.ipynb   # Full pipeline: preprocessing, statistics, nested CV, ablation, test
-└── docs/presentation.pptx           # Final presentation (in Italian)
+└── docs/
+    ├── report.pdf                   # Full project report (in Italian)
+    └── presentation.pptx            # Final presentation (in Italian)
 ```
 
 ## How to run

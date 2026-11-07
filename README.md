@@ -15,5 +15,6 @@ Many projects were carried out as group work with fellow students; each folder c
 | [Human Hand vs Robolimb – Kinematic Analysis](Biomechanics_Human_vs_Robolimb_Kinematics/) | Bioengineering and Biomechanics of Human Movement (group) | Marker-based video tracking, Kalman filter, PyQt6 GUI, UDP robot control, YOLO, kinematic features, non-parametric statistics | May–Jun 2026 |
 | [PillBro – IoMT Smart Pill Dispenser](IoMT_PillBro_Smart_Pill_Dispenser/) | Internet of Medical Things (group) | 3-tier IoMT architecture, MQTT, UART, Cisco Packet Tracer simulation, LLM voice companion (design), business model | May–Jun 2026 |
 | [ICD-10 Chapter Prediction](Machine_Learning_ICD10_Chapter_Prediction/) | Machine Learning and Big Data Analytics (group) | Clinical tabular data, feature engineering, statistical feature selection, LR/SVM/RF/XGBoost, nested CV, ablation study | May–Jul 2026 |
+| [Hand of Hope – Clinical Investigation Protocol](Rehabilitation_HandOfHope_Clinical_Protocol/) | Rehabilitation Bioengineering (group, with physiotherapists) | EMG-driven hand exoskeleton, post-stroke rehabilitation, MDR clinical protocol, endpoints (FMA-UE, ARAT…), statistical analysis plan | Jan 2026 |
 
 *More projects will be added.*
